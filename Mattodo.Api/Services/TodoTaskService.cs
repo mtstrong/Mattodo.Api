@@ -11,8 +11,10 @@ public class TodoTaskService : ITodoTaskService
         _connectionFactory = connectionFactory;    
     }
 
-    public async Task<bool> CreateAsync(TodoTask task)
+    public async Task<bool> CreateTodoTaskAsync(TodoTask task)
     {
+        task.Id = Guid.NewGuid().ToString();
+
         var existingTask = await GetTodoTaskByIdAsync(task.Id);
         if(existingTask is not null)
         {
@@ -34,14 +36,14 @@ public class TodoTaskService : ITodoTaskService
             "SELECT * FROM Tasks WHERE Id = @Id LIMIT 1", new {Id = id});
     }
  
-    public async Task<IEnumerable<TodoTask>> GetAllAsync()
+    public async Task<IEnumerable<TodoTask>> GetAllTodoTasksAsync()
     {
         using var connection = await _connectionFactory.CreateConnectionAsync();
         return await connection.QueryAsync<TodoTask>(
             "SELECT * FROM Tasks");
     }
 
-    public async Task<bool> UpdateAsync(TodoTask task)
+    public async Task<bool> UpdateTodoTaskAsync(TodoTask task)
     {
         var existingTask = await GetTodoTaskByIdAsync(task.Id);
         if(existingTask is null)
@@ -60,7 +62,7 @@ public class TodoTaskService : ITodoTaskService
         return result > 0;
     }
 
-    public async Task<bool> DeleteAsync(string id)
+    public async Task<bool> DeleteTodoTaskAsync(string id)
     {
         using var connection = await _connectionFactory.CreateConnectionAsync();
         var result = await connection.ExecuteAsync(
