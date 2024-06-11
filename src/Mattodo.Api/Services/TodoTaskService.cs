@@ -14,6 +14,7 @@ public class TodoTaskService : ITodoTaskService
     public async Task<bool> CreateTodoTaskAsync(TodoTask task)
     {
         task.Id = Guid.NewGuid().ToString();
+        task.LastModified = DateTime.UtcNow;
 
         var existingTask = await GetTodoTaskByIdAsync(task.Id);
         if(existingTask is not null)

@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mattodo.Api", "Mattodo.Api\Mattodo.Api.csproj", "{AFED81D0-03DC-404B-8CDD-B5BCB8893D9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mattodo.Api", "src\Mattodo.Api\Mattodo.Api.csproj", "{AFED81D0-03DC-404B-8CDD-B5BCB8893D9C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{BB6193A2-EA69-484C-9364-A7FC3C9ADEBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mattodo.Api.IntegrationTests", "tests\Mattodo.Api.IntegrationTests\Mattodo.Api.IntegrationTests.csproj", "{875DB7A0-EB3B-461A-B8EE-B51B43D7BF98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,11 +19,18 @@ Global
 		{AFED81D0-03DC-404B-8CDD-B5BCB8893D9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFED81D0-03DC-404B-8CDD-B5BCB8893D9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFED81D0-03DC-404B-8CDD-B5BCB8893D9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{875DB7A0-EB3B-461A-B8EE-B51B43D7BF98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{875DB7A0-EB3B-461A-B8EE-B51B43D7BF98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{875DB7A0-EB3B-461A-B8EE-B51B43D7BF98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{875DB7A0-EB3B-461A-B8EE-B51B43D7BF98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1F7BBF3A-A25F-4FEF-9583-BEDDDFC178B6}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{875DB7A0-EB3B-461A-B8EE-B51B43D7BF98} = {BB6193A2-EA69-484C-9364-A7FC3C9ADEBB}
 	EndGlobalSection
 EndGlobal
