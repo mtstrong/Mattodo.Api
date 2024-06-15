@@ -1,18 +1,17 @@
 using System.Net;
 using FluentAssertions;
 using Mattodo.Api.Models;
-using Mattodo.Api.Tests.Integration;
 using Mattodo.Api.Data;
 using Microsoft.AspNetCore.Mvc.Testing;
 
-namespace Mattodo.Api.IntegrationTests;
+namespace Mattodo.Api.Tests.Integration;
 
 public class TodoTaskEndpointTests : IClassFixture<TodoTaskApiFactory>, IAsyncLifetime
 {
-    private readonly WebApplicationFactory<IApiMarker> _factory;
+    private readonly TodoTaskApiFactory _factory;
     private readonly List<string> _createdIds = new();
 
-    public TodoTaskEndpointTests(WebApplicationFactory<IApiMarker> factory)
+    public TodoTaskEndpointTests(TodoTaskApiFactory factory)
     {
         _factory = factory;
     }
