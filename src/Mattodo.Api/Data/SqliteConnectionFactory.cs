@@ -1,7 +1,7 @@
 using System.Data;
 using Microsoft.Data.Sqlite;
 
-namespace Mattodo.Api;
+namespace Mattodo.Api.Data;
 
 public class SqliteConnectionFactory : IDbConnectionFactory
 {

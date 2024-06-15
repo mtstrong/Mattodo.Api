@@ -1,6 +1,6 @@
 using System.Data;
 
-namespace Mattodo.Api;
+namespace Mattodo.Api.Data;
 
 public interface IDbConnectionFactory
 {

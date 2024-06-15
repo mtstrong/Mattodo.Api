@@ -1,6 +1,7 @@
 using FluentValidation;
 using Mattodo.Api;
 using Mattodo.Api.Auth;
+using Mattodo.Api.Data;
 using Mattodo.Api.Endpoints.Internal;
 
 var builder = WebApplication.CreateBuilder(args);

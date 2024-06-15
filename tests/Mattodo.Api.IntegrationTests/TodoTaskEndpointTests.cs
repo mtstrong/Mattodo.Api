@@ -2,6 +2,7 @@ using System.Net;
 using FluentAssertions;
 using Mattodo.Api.Models;
 using Mattodo.Api.Tests.Integration;
+using Mattodo.Api.Data;
 using Microsoft.AspNetCore.Mvc.Testing;
 
 namespace Mattodo.Api.IntegrationTests;

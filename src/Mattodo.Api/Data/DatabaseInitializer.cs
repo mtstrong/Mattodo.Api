@@ -1,7 +1,7 @@
 using Dapper;
 using Microsoft.VisualBasic;
 
-namespace Mattodo.Api;
+namespace Mattodo.Api.Data;
 
 public class DatabaseInitializer
 {
