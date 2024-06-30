@@ -9,4 +9,4 @@ services:
       context: .
       dockerfile: src/Mattodo.Api/Dockerfile
     ports:
-      - 5058:5058
+      - 7260:7260
