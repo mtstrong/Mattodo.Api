@@ -21,4 +21,5 @@ RUN dotnet publish "Mattodo.Api.csproj" -c $configuration -o /app/publish /p:Use
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+COPY "/src/Mattodo.Api/tasks.db" .
 ENTRYPOINT ["dotnet", "Mattodo.Api.dll"]
