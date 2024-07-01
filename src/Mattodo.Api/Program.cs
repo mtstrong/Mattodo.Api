@@ -31,6 +31,11 @@ app.UseEndpoints<Program>();
 app.MapGet("/", () => "Hello World!")
 .WithTags("ForTheLulz");
 
+if(!File.Exists(@"/config/tasks.db"))
+{
+    throw new Exception("File aint here");
+}
+
 var dbInitializer = app.Services.GetRequiredService<DatabaseInitializer>();
 await dbInitializer.InitializeAsync();
 

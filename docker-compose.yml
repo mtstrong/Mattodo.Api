@@ -7,15 +7,8 @@ services:
     image: mattodoapi
     build:
       context: .
-      dockerfile: src/Mattodo.Api/Dockerfile
+      dockerfile: Dockerfile
+    volumes:
+      - C:\Users\Matt\Documents\code\mattodo\src\Mattodo.Api:/config
     ports:
       - 7260:7260
-
-  sql:
-    image: "mcr.microsoft.com/mssql/server:2022-latest"
-    container_name: sql_server2022
-    ports:
-      - "1433:1433" 
-    environment:
-      - ACCEPT_EULA=y
-      - SA_PASSWORD=TempPassword1234

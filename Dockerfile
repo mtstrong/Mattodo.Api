@@ -8,10 +8,10 @@ USER app
 FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG configuration=Release
 WORKDIR /src
-COPY ["Mattodo.Api.csproj", "./"]
-RUN dotnet restore "Mattodo.Api.csproj"
+COPY ["src/Mattodo.Api/Mattodo.Api.csproj", "src/Mattodo.Api/"]
+RUN dotnet restore "src/Mattodo.Api/Mattodo.Api.csproj"
 COPY . .
-WORKDIR "/src/."
+WORKDIR "/src/src/Mattodo.Api"
 RUN dotnet build "Mattodo.Api.csproj" -c $configuration -o /app/build
 
 FROM build AS publish
@@ -21,4 +21,5 @@ RUN dotnet publish "Mattodo.Api.csproj" -c $configuration -o /app/publish /p:Use
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+COPY "/src/Mattodo.Api/tasks.db" .
 ENTRYPOINT ["dotnet", "Mattodo.Api.dll"]
